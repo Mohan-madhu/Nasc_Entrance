@@ -1,0 +1,341 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin_Design.master.cs" Inherits="Design" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>NASC Entrance</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../Content/angular.js"></script>
+    <script src="../Content/angular.min.js"></script>
+
+    <script src="../js/Angular_App.js"></script>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <%-- <webopt:BundleReference runat="server" Path="~/Content/css" />--%>
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/icon.css" rel="stylesheet" />
+    <link href="Content/icon.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/Content/ngi.ico" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        .panel-container {
+            background-color: #ffffff;
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .container {
+            max-width: 70%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-container {
+            width: auto;
+            overflow-x: auto;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+
+
+
+        .form-group {
+            margin-bottom: 20px;
+            display: inline;
+            justify-content: center;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+
+        label {
+            font-weight: bold;
+        }
+        /* Style for the GridView */
+        .gridview {
+            width: 100%;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+            /* Style for the header row */
+            .gridview th {
+                background-color: #007bff;
+                border: 1px solid #000000;
+                color: white;
+                font-weight: bold;
+                padding: 10px;
+                font-size: 15px;
+                text-align: left;
+                padding: 8px;
+                text-align: left;
+            }
+
+
+
+            /* Style for the data rows */
+            .gridview tr:nth-child(even) {
+               /* background-color: #f2f2f2;*/
+                font-weight: bold;
+                font-size: 15px;
+            }
+
+            /* Hover effect for data rows */
+            .gridview tr:hover {
+                background-color: #ddd;
+            }
+
+            /* Style for cells */
+            .gridview td {
+                padding: 8px;
+                font-size: 15px;
+                font-weight: bold;
+                border: 1px solid #000000; /* Border color */
+                padding: 8px;
+                text-align: left;
+            }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            background-image: url('../image/nehrubg.jpg'); /* Specify the path to your background image */
+            background-size: cover; /* Cover the entire background */
+            background-repeat: repeat-x; /* Repeat the background image only horizontally */
+            animation: slide 20s linear infinite; /* Apply animation called "slide" */
+            flex-direction: column; /* Add this line */
+
+            display: flex;
+            flex-direction: column; /* Add this line */
+            justify-content: center;
+        }
+
+        @keyframes slide {
+            from {
+                background-position: 0 0; /* Start position */
+            }
+
+            to {
+                background-position: 100% 0; /* End position */
+            }
+        }
+
+        /* Stylish GridView paging */
+        .GridPager {
+            text-align: center;
+            margin-top: 90px;
+        }
+
+            .GridPager a {
+                display: inline-block;
+                padding: 8px 8px;
+                margin: 5px 5px;
+                border: 2px solid #4CAF50;
+                background-color: #4CAF50;
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 16px;
+                border-radius: 5px;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+                .GridPager a:hover {
+                    background-color: #45a049;
+                    color: #ffffff;
+                }
+
+            .GridPager .selected {
+                background-color: #45a049;
+                color: #ffffff;
+            }
+
+            .GridPager span {
+                display: inline-block;
+                padding: 8px 8px;
+                margin: 0 5px;
+                background-color: #f2f2f2;
+                color: #333333;
+                font-size: 16px;
+                border-radius: 5px;
+            }
+
+        .btn-green {
+            width: 49%;
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: all 0.3s ease;
+        }
+
+            .btn-green:hover {
+                background-color: #45a049; /* Darker shade on hover */
+                transform: translateY(-7px); /* Lift the button slightly */
+                box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+            }
+
+
+
+        .btn-blue {
+            width: 49%;
+            background-color: #007bff; /* Blue */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: all 0.3s ease;
+        }
+
+            .btn-blue:hover {
+                background-color: #0056b3; /* Darker shade on hover */
+                transform: translateY(-7px); /* Lift the button slightly */
+                box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+            }
+
+
+
+        @media screen and (min-width: 768px) {
+            .container {
+                width: 700px;
+                margin: 0 auto;
+            }
+
+            .glass-container {
+                backdrop-filter: blur(20px);
+                
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .container {
+                width: 100%;
+                padding: 0 20px;
+            }
+
+            .glass-container {
+                backdrop-filter: blur(5px);
+                max-width: 300px;
+            }
+        }
+    </style>
+
+
+    <script>
+        window.onload = function () {
+            var queryString = window.location.search;
+            var urlParams = new URLSearchParams(queryString);
+            var message = urlParams.get('msg');
+            if (sessionStorage.getItem('msg') != message) {
+
+                if (message) {
+                    alert(message);
+                }
+                sessionStorage.setItem('msg', message);
+
+            }
+        };
+
+        function showAlert(message) {
+            alert(message);
+        }
+    </script>
+
+
+    <link href="Content/icon.css" rel="stylesheet" />
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <div ng-app="mymodule">
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+            <br />
+            <br />
+            <br />
+        </div>
+
+
+    </form>
+    <footer class="footer">
+
+        <center>
+            <p>&copy; <%: DateTime.Now.Year %> - Nehru Arts and Science College</p>
+        </center>
+    </footer>
+</body>
+</html>
+

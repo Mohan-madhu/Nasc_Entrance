@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "NASC_Entrance", ".", "{E3C86BA0-729F-432B-A439-97973578A6D9}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_16298"
+		Debug.AspNetCompiler.PhysicalPath = "..\NASC_Entrance\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_16298\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_16298"
+		Release.AspNetCompiler.PhysicalPath = "..\NASC_Entrance\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_16298\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "16298"
+		SlnRelativePath = "..\NASC_Entrance\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3C86BA0-729F-432B-A439-97973578A6D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3C86BA0-729F-432B-A439-97973578A6D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DCD40151-B6CA-4379-BED8-FE6AADFB484B}
+	EndGlobalSection
+EndGlobal
